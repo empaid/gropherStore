@@ -6,4 +6,6 @@ import (
 
 func (app *application) healthCheckHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Everything works"))
+
+	// app.store.Posts.Create(context, )
 }
