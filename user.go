@@ -1,11 +1,6 @@
 package main
 
-import "net/http"
-
-func (a *api) getUserHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Users handler"))
-}
-
-func (a *api) createUsersHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Users handler"))
+type User struct {
+	FirstName string `json:"first_name" validate:"required"`
+	LastName  string `json:"last_name"`
 }

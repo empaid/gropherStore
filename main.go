@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	api := &api{addr: ":8080"}
+	api := &api{addr: ":8081"}
 
 	mux := http.NewServeMux()
 
@@ -14,7 +14,7 @@ func main() {
 		Handler: mux,
 	}
 
-	mux.HandleFunc("GET /users", api.getUserHandler)
+	mux.HandleFunc("GET /users", api.getUsersHandler)
 	mux.HandleFunc("POST /users", api.createUsersHandler)
 
 	if err := srv.ListenAndServe(); err != nil {
